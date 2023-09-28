@@ -129,7 +129,7 @@ namespace MauiAppClient.ViewModels
         private void CustomActionInsertProductRow()
         {
             using var sqliteConnection = new SqliteConnection(this.settings.DataSource);
-            var c = new SqliteCommand($"Insert into ProductCategory(ProductcategoryId, Name, rowguid, ModifiedDate) Values (@productcategoryId, @name, @rowguid, @modifiedDate)")
+            var c = new SqliteCommand($"Insert into ProductCategory(ProductcategoryId, Name, rowguid, ModifiedDate, IsActive) Values (@productcategoryId, @name, @rowguid, @modifiedDate, 1)")
             {
                 Connection = sqliteConnection
             };
