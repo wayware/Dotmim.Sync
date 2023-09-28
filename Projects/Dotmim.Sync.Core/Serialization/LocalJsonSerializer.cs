@@ -336,11 +336,11 @@ namespace Dotmim.Sync.Serialization
                     case "c":
                         var tmpTable = GetSchemaTableFromReader(reader, serializer, schemaTable?.TableName ?? tableName, schemaTable?.SchemaName ?? schemaName);
 
-                        if (tmpTable != null)
-                            schemaTable = tmpTable;
-
-                        //if (schemaTable == null && tmpTable != null)
+                        //if (tmpTable != null)
                         //    schemaTable = tmpTable;
+
+                        if (schemaTable == null && tmpTable != null)
+                            schemaTable = tmpTable;
 
                         continue;
                     case "r":
